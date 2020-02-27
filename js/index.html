@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">We are learning <!--this is comment--></h1>
+    <h2 class="heading myclass">this is heading 2</h2>
+    <p id="fees">this is paragraph 1</p>
+    <p id="fees1">this is paragraph 2</p>
+    <p id="fspan">this is just line of 
+        <span>hello</span>
+        <em>js</em>
+    </p>
+    <p id="findspan">this is just line of 
+        <span>hello</span>
+        <em>js</em>
+        <span>advance</span>
+        <b>Hello </b>
+        <h1>heading </h1>
+    </p>
+    <div id="findid">
+        <p class="myclass">this is with class name p</p>
+        <p>this is just <span class="spanclass">span class element</span>line with out class
+            <span class="spanclass">to check</span></p>
+        <p class="findclass">this is class name findclass</p>
+        <p class="myclass">this is class name p</p>
+    </div>
+    <div id="idparent">
+        <p>this is with out class</p>
+    </div>
+    <div id="idchild">
+        <h1 id="myid1" class="myclass1" >this is for node attribute property</h1>
+        <h2 id="idchild1">
+            <!--this is comment -->this is children node
+            <span>span element </span>
+            <span>span element</span>
+        </h2>
+        <p id="idchild2">
+            this is for check p element<span> span element</span>
+        </p>
+    </div>
+    <h1 id="nodeid">
+        <!--this is comment-->
+        <span>hello span tag</span>
+        <p>it is p tag</p><!--this is comment-->
+    </h1>
+    <div id="id1">
+        <h1 id="myh1">we are using heading tag</h1>
+        <h1>this is heading</h1>
+    </div>
+    <div id="id2">
+        
+    </div>
+    <script>
+        // getElementById method to access element object
+    //    var result = document.getElementById("heading")
+    //    document.write(result)
+    //    console.log(result)
+    //    getElementsByTagName method access by tag return object list 
+    //    var result = document.getElementsByTagName()
+    //    var result = document.getElementsByTagName("span")
+    //    var result = document.getElementsByTagName("*")
+    //    var result = document.body.getElementsByTagName("*") not allowed
+    // more specific
+    // var getspan = document.getElementById("fspan")
+    // var result = getspan.getElementsByTagName("span")
+    // var result = document.getElementById("fspan").getElementsByTagName("span")
+    // var result = document.getElementById("fspan").getElementsByTagName("*")
+    // var result = document.getElementById("findspan").getElementsByTagName("span")
+    // var result = document.getElementById("findspan").getElementsByTagName("*")
+    // length property with tagname
+    // var getspan = document.getElementsByTagName("span")
+    // var result = getspan.length
+    // var result = document.getElementsByTagName("span").length
+    //     document.write(result)
+    //     console.log(result)
+    // // loop using length property
+    // var result = document.getElementsByTagName("span")[2]
+    // var len = document.getElementsByTagName("span").length
+    // for(let i =0; i<len; i+=1){
+    //     var result = document.getElementsByTagName("span")[i];
+    //     console.log(result)
+    //     document.write(result +"<br/>")
+    // }
+
+    // getElementsByClassName method using class name and more class name then that element 
+    // var result = document.getElementsByClassName("myclass")
+    // var result = document.body.getElementsByClassName("myclass")
+
+    // var find = document.getElementById("findid")
+    // var output = find.getElementsByClassName("findclass")
+    // var output = document.getElementById("findid").getElementsByClassName("myclass")
+
+    // length property
+    // var output = document.getElementsByClassName("myclass")
+    // var len = output.length
+    // var len = document.getElementsByClassName("myclass").length
+    
+    // for loop 
+    // var output = document.getElementsByClassName("myclass")[2]
+    // var len = document.getElementsByClassName("myclass").length
+    // for(let i =0; i<len; i+=1){
+    //     var output = document.getElementsByClassName("myclass")[i];
+    //     console.log(output)
+    //     document.write(output+"<br/>")
+    // }
+
+    // querySelector method used css selector returns only one of the given value which comes first
+    // element selector
+    // output = document.querySelector("p")
+    // output = document.querySelector("p,h1")
+    // output = document.querySelector("#findid, #findspan")
+    // output = document.querySelector(".myclass, .findclass")
+    // output = document.querySelector("div > p.findclass, div > p.myclass")
+    // console.log(output)
+    // document.write(output)
+
+    // querySelectorAll method using css selector returns list of all element
+    output = document.querySelectorAll("p")
+    output = document.querySelectorAll("p,h1,div")
+    output = document.querySelectorAll("p,h1,div")[0]
+    output = document.querySelectorAll("h1, #findid")
+    output = document.querySelectorAll("div[id]")
+    output = document.querySelectorAll("div[id='findid']")
+    output = document.querySelectorAll("p[class='myclass']")
+    output = document.querySelectorAll("p[class*='class']")
+    output = document.querySelectorAll("p[class$='class']")
+    output = document.querySelectorAll("p[class^='my']")
+    output = document.querySelectorAll(".myclass")
+    output = document.querySelectorAll("h2.myclass")
+    output = document.querySelectorAll("h1#heading")
+    // output = document.querySelectorAll("span.spanclass")
+
+    // access element 
+    // var find = document.getElementById("findid")
+    // var output = find.querySelectorAll("span.spanclass")
+
+    // var output = document.getElementById("findid").querySelectorAll("span.spanclass")
+    // var output = document.getElementById("findid").querySelectorAll("p[class*='class']")
+
+    // var output = document.querySelectorAll("#findid > p.myclass")
+    // var output = document.querySelectorAll("#findid > p > span.spanclass")
+    
+    // length property use
+    // find = document.querySelectorAll(".myclass")
+    // output = find.length
+
+    // for loop
+    // output = document.querySelectorAll(".myclass")[0]
+    len = document.querySelectorAll(".myclass").length
+    find = document.querySelectorAll(".myclass")
+    
+    for(let i =0; i<len; i+=1){
+        output = find[i]
+        // document.write(output+"<br/>")
+        // console.log(output)
+    }
+// webpage properties
+// console.log(document.URL)
+// document.doctype
+// document.body
+// document.head
+// document.images
+// document.links
+// document.all
+// document.domain
+// document.URL 
+// document.onclick
+
+// Properties of node Object
+// node---
+//         document----html document
+//         Element-----html element------htmlHeadElement,HTMLBodyElement,HTMLParagraphElement,HTMLTitleElement
+//         CharacterData----text comment
+
+// Node Object is a single node it document 
+// properties:
+// nodeName | nodeType | nodeValue | textContent | parentNode | childNodes | firstChild | lastChild | 
+// previousSibling | nextSibling
+// document node
+// document.write(document.nodeName+"</br>")
+// document.write(document.nodeValue+"</br>")
+// document.write(document.nodeType+"</br>")
+// console.log(document.nodeName)
+// console.log(document.nodeValue)
+// console.log(document.nodeType)
+// element node
+var elm = document.getElementById("heading")
+// document.write(elm.nodeName+"</br>")
+// document.write(elm.nodeValue+"</br>")
+// document.write(elm.nodeType+"</br>")
+// console.log(elm.nodeName)
+// console.log(elm.nodeValue)
+// console.log(elm.nodeType)
+// text node and comment node
+var txt = document.getElementById("heading")
+
+// document.write(txt.firstChild.nextSibling.nodeName+"</br>")s
+// document.write(txt.firstChild.nextSibling.nodeValue+"</br>")
+// document.write(txt.firstChild.nextSibling.nodeType+"</br>")
+// console.log(txt.firstChild.nextSibling.nodeName)
+// console.log(txt.firstChild.nextSibling.nodeValue)
+// console.log(txt.firstChild.nextSibling.nodeType)
+
+// get text content node
+// var txt = document.getElementById("heading")
+// document.write(txt.firstChild.nodeValue+"<br/>")
+// console.log(txt.firstChild.nodeValue)
+// // set text content node-- change html text using node
+// var txt = document.getElementById("heading")
+// .firstChild.nodeValue = "this is new heading"
+// document.write(txt+"<br/>")
+// console.log(txt)
+
+// attribute object properties in node
+// name and value--return list of attr with index number 
+// var elm = document.getElementById("myid1")
+// var attrN = elm.attributes[0].nodeName
+// var attrV = elm.attributes[0].nodeValue
+// var attrN1 = elm.attributes[1].nodeName
+// var attrV1 = elm.attributes[1].nodeValue
+
+// document.write(attrN +"<br/>")
+// document.write(attrV+"<br/>")
+// document.write(attrN1+"<br/>")
+// document.write(attrV1+"<br/>")
+// length property
+// var ln = elm.attributes.length
+// for loop
+// for (let i =0; i<ln; i+=1){
+//     console.log(elm.attributes[i].nodeName)
+//     console.log(elm.attributes[i].nodeValue)
+// }
+// attributes property nodeValue and nodeName change to Name and Value
+// var elm = document.getElementById("myid1")
+// var attr = elm.attributes[0].name
+// var attr1 = elm.attributes[0].value
+// var attr2 = elm.attributes[1].name
+// var attr3 = elm.attributes[1].value
+//  var len = elm.attributes.length
+
+// for(let i =0; i< len; i+=1){
+//     console.log(elm.attributes[i].name)
+//     console.log(elm.attributes[i].value)
+// }
+// Node of element and element node differ
+// space tab and enter are node of an element and consider as text node
+// html , title ,head , body are element node
+// enter space and tab also count in document tree.
+
+// // dom traversal 
+// parentNode parentElement | childNodes children | firstChild and fisrtElementChild |
+// lastChild lastElementChild | previousSibling previousElementSibling |
+// nextSibling  nextElementSibling
+
+// parentNode and parentElement----
+// parentNode will return parent but parentElement will not return if parent node is not an element node -
+// if you want parent node to be element node then use parentElement else parentNode
+
+var output = document.getElementById("idparent")
+// console.log(output.parentNode)
+// console.log(output.parentElement)
+
+// chidNodes and Children
+// childNodes return all children nodes including space tab enter  text node  comment but
+// children return only children element node not including space tab text node and comment
+
+var elm  = document.getElementById("idchild2")
+// console.log(elm.childNodes)
+// console.log(elm.children)
+// length property
+
+// var elm = document.getElementById("idchild1")
+// var elm = document.getElementById("idchild1").childNodes.length
+// var len = elm.childNodes.length
+// console.log(elm.childNodes)
+// console.log(len)
+
+var elm = document.getElementById("idchild1")
+// var elm = document.getElementById("idchild1").children.length
+// var len = elm.children.length
+// console.log(elm.children)
+// console.log(len)
+
+// for loop
+var elm  = document.getElementById("idchild1")
+// console.log(elm.childNodes[2])
+// console.log(elm.children[0])
+// var len = elm.childNodes.length
+// var clen = elm.children.length
+
+// for(let i =0; i <len; i+=1){
+//     console.log(elm.childNodes[i])
+// }
+
+// for(let i =0; i <clen; i+=1){
+//     document.write(elm.children[i])
+//     document.write(elm.children[i].textContent)
+// }
+// for browser use and change text
+// use children for element
+// var elm  = document.getElementById("idchild2")
+// elm.children[0].textContent = "change span element content"
+// console.log(elm.children)
+
+// fisrtChild and fisrtElementChild
+// var elm = document.getElementById("idfchild")
+// console.log(elm.firstChild)
+// document.write(elm.firstChild)
+// console.log(elm.firstElementChild)
+
+// document.write(elm.firstElementChild.textContent)
+// document.write(elm.firstChild.textContent)
+
+// txt = elm.firstElementChild.textContent = "this is new in heading tag"
+// txt = elm.children[0].textContent = "this is new in heading tag"
+// txt = elm.firstChild.textContent = "this is new in the start"
+// txt = elm.childNodes[0].textContent = "this is new in the start"
+
+// lastChild and lastElementChild
+
+// var elm  = document.getElementById("nodeid") 
+// console.log(elm.lastChild)
+// console.log(elm.lastElementChild)
+// var txt = elm.lastElementChild.textContent
+// document.write(txt)
+// var txt = elm.lastElementChild.textContent ="this is last element"
+// var txt = elm.lastChild.textContent ="this is last element"
+
+// previousSibling and previousElementSibling 
+// var elm  = document.getElementById("nodeid")
+// console.log(elm.lastChild.previousSibling)
+// console.log(elm.lastChild.previousElementSibling)
+// console.log(elm.lastElementChild.previousElementSibling)
+// elm.lastElementChild.previousElementSibling.textContent = "last element"
+// console.log(elm.lastElementChild.previousSibling)
+
+// nextSibling and nextElementSibling
+var elm = document.getElementById("nodeid")
+// console.log(elm.firstChild.nextSibling)
+// console.log(elm.firstChild.nextElementSibling)
+// console.log(elm.firstElementChild.nextSibling)
+// console.log(elm.firstElementChild.nextElementSibling)
+// console.log(elm.lastChild.nextElementSibling)
+// elm.firstElementChild.nextElementSibling.textContent = "check p tag "
+
+// create node 
+// var newnode = document.createElement("h2")
+// var newnode = document.createElement("p")
+// console.log(newnode)
+// var newtnode = document.createTextNode("this is sample text")
+// var newtnode = document.createTextNode("this is sample string")
+// console.log(newtnode)
+// var newcnode = document.createComment("this is comment line")
+// var newcnode = document.createComment("this is comment line")
+// console.log(newcnode)
+// var newdfnode = document.createDocumentFragment()
+// console.log(newdfnode)
+
+// appendChild node with existing element and new element
+// var elm = document.getElementById("id1")
+// console.log(id1)
+var pnode = document.getElementById("id2")
+// console.log(pnode)
+var cnode = document.getElementById("myh1")
+// pnode.appendChild(cnode)
+// console.log(pnode)
+// new element node h2
+var enode = document.createElement("h2")
+var anode = document.getElementById("id1")
+// appending new element h2 to div
+anode.appendChild(enode)
+console.log(anode)
+
+
+
+
+
+
+    </script>
+</body>
+</html>

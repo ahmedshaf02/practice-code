@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 400px;
+            background-color: crimson;
+            height: 300px;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+        }
+        #div3{
+            width: 100px;
+            height: 100px;
+            background-color: powderblue;
+        }
+
+        #divone{
+            width: 300px;
+            height: 300px;
+            background-color: crimson;
+        }
+        #divtwo{
+            width: 100px;
+            height: 100px;
+            background-color: powderblue;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="btn">click to check event</button>
+    Name<input id="text" type="text"/>
+
+    <!-- <div id="div1">one
+        <div id="div2">two
+            <div id="div3">
+                three
+            </div>
+        </div>
+    </div>
+    <div id="div4">
+        <img/>
+        <a id="link" href="http://www.google.com">link to google</a>
+    </div> -->
+
+    <!-- <div id="divone">
+        <div id="divtwo">
+
+        </div>
+    </div> -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+         Doloribus quam voluptatibus est! Placeat, odio libero a,
+          culpa nam illo nemo delectus unde dolorem non sit consectetur 
+          dolorum, autem fugiat eos!</p>
+    <button id="btn1">print</button>
+
+    <button id="openbtn">Open window</button>
+    <button id="focusbtn">Focus</button>
+    <button id="blurbtn">Blur</button>
+
+<script>
+
+        // Event in js
+        // var ele = document.getElementById("btn")
+        // p.onclick = function(){alert("hello")}
+
+        // event binding overwrite events
+        // var btn = document.getElementById("btn")
+        // btn.onclick = function(){
+        //     alert("hello")}
+        // document.getElementById("btn").onclick = function(){
+        //     alert("hello")}
+
+        // document.getElementById("btn").onclick = disp;
+        // // document.getElementById("btn").onclick = disp1
+
+        // function disp(){
+        //     alert("button clicked here")
+        // }
+        // function disp1(){
+        //     alert("button1 clicked here")
+        // }
+        
+        // addEventListener
+        
+        // bubbling phase
+        // var btn = document.getElementById("btn");
+        // btn.addEventListener("click",function(){
+        //     alert("you clicked button")
+        // },false)
+
+        // capture phase
+        // btn.addEventListener("click",function(){
+        //     alert("you clicked button")
+        // },true)
+
+        // btn.addEventListener("click",show)
+        // btn.addEventListener("click",show2)
+
+        // btn.addEventListener("mouseover",show)
+        // btn.addEventListener("mouseover",show2,true)
+
+        // btn.removeEventListener("mouseover",show2)
+        
+        // function show(){
+        //     alert("you clicked on button")
+        // }
+        // function show2(){
+        //     alert("you clicked on button2")
+        // }
+        // var div1 = document.getElementById("div1")
+        // var div2 = document.getElementById("div2")
+        // var div3 = document.getElementById("div3")
+
+        // bubbling phase
+        // div1.addEventListener("click",show1,false)
+        // div2.addEventListener("click",show2,false)
+        // div3.addEventListener("click",show3,false)
+
+        // capture phase
+        // div1.addEventListener("click",show1,true)
+        // div2.addEventListener("click",show2,true)
+        // div3.addEventListener("click",show3,true)
+
+        // function show1(){
+        //     div1.style.backgroundColor ="black"
+        //     console.log("1")
+        // }
+        // function show2(){
+        //     div2.style.backgroundColor ="gray"
+        //     console.log("2")
+        // }
+        // function show3(){
+        //     div3.style.backgroundColor ="lightgray"
+        //     console.log("3")
+        // }
+        
+        // div1.addEventListener("click",function(e){
+        //     console.log("1")
+        //     console.log("target :"+e.target)
+        //     console.log("currenttarget :"+e.currentTarget)
+        // },true)
+
+        // div2.addEventListener("click",function(e){
+        //     console.log("2")
+        //     console.log("target :"+e.target.dataset.name)
+        //     console.log("currenttarget :"+e.currentTarget)
+        // },true)
+
+        // div3.addEventListener("click",function(e){
+        //     console.log("3")
+        //     console.log("target :"+e.target)
+        //     console.log("currenttarget :"+e.currentTarget)
+        // },true)
+
+        // stopPropagation method stopImmediatePropagation
+
+        //  function show1(e){
+        // function show2(e){
+        //     div2.style.backgroundColor ="gray"
+        //     console.log("2")
+        //     // e.stopImmediatePropagation();
+        // }
+        // function show2_2(e){
+        //     div2.style.width ="300px"
+        //     console.log("2")
+           
+        // }
+        // function show3(e){
+        //     div3.style.backgroundColor ="lightgray"
+        //     console.log("3")
+        //     // e.stopImmediatePropagation()
+        // }
+        // var div1 = document.getElementById("div1")
+        // var div2 = document.getElementById("div2")
+        // var div3 = document.getElementById("div3")
+
+        // div1.addEventListener("click",show1)
+        // div2.addEventListener("click",show2)
+        // div2.addEventListener("click",show2_2)
+        // div3.addEventListener("click",show3)
+
+        // preventDefault method
+        // function stopLink(e){
+        //     e.preventDefault();
+        // }
+        // var alink = document.getElementById("link")
+        // alink.addEventListener("click",stopLink)
+        // var btn = document.getElementById("btn")
+        // btn.addEventListener("click",function(){
+        //     alert("button clicked on");
+        
+        // })
+
+        // MouseEvent
+            // function show1(e){
+                // this.style.backgroundColor = "black"
+                // this.style.width = "400px"
+            //     console.log(e.type)
+            // }
+
+        var div1 = document.getElementById("divone")
+        var div2 = document.getElementById("divtwo")
+        // div1.addEventListener("mousedown",show1)
+        // div1.addEventListener("mouseup",show1)
+        // div1.addEventListener("click",show1)
+        // div1.addEventListener("dblclick",show1)
+        // div1.addEventListener("mouseenter",show1)
+        // div1.addEventListener("mouseleave",show1)
+        // div1.addEventListener("mouseover",show1)
+        // div1.addEventListener("mouseout",show1)
+        // div1.addEventListener("mousemove",show1)
+        // div1.addEventListener("contextmenu",show1)
+
+    // function colorChange1(e){
+    //     this.style.backgroundColor = "gray"
+    //     this.style.color = "white"
+    // }
+    // function colorChange2(e){
+    //     this.style.backgroundColor = "white"
+    //     this.style.color = "black"
+    // }
+    
+        // var ele = document.getElementById("text")
+        // ele.addEventListener("mouseover",colorChange1)
+        // ele.addEventListener("mouseout",colorChange2)
+
+        // focus event
+        // focus
+        // blur
+        // focusin
+        // focusout
+    //     function focus1(e){
+    //     this.style.backgroundColor = "lightgray"
+    //     this.style.color = "black"
+    // }
+    // function focus2(e){
+    //     this.style.backgroundColor = "white"
+    //     this.style.color = "black"
+    // }
+    // var ele = document.getElementById("text")
+        // ele.addEventListener("focus",focus1)
+        // ele.addEventListener("blur",focus2)
+        // var ele = document.getElementById("text")
+        // ele.addEventListener("focusin",focus1)
+        // ele.addEventListener("focusout",focus2)
+
+        // key events
+        // keydown, keypress keyup
+        // function key(e){
+        //     console.log(e.type)
+        //     console.log(e.keyCode)
+        // }
+        // var ele = document.getElementById("text")
+        // ele.addEventListener("keydown",key)
+        // ele.addEventListener("keypress",key)
+        // ele.addEventListener("keyup",key)
+
+        // text event
+        // function text(e){
+        //     console.log(e.type)
+        //     console.log(e.data)
+        // }
+        // var ele = document.getElementById("text")
+        // ele.addEventListener("textInput",text)
+
+        // print event
+        // function printDoc(){
+        //     window.print();
+        // }
+        // var btn1 = document.getElementById("btn1")
+        // btn1.addEventListener("click",printDoc)
+
+            // focus and blur method
+        // function openWindow(){
+        //     newWindow = window.open("http://www.google.com","_blank","width=300, height=300")
+            
+        // }
+        // function focusWin(){
+        //     newWindow.focus()
+        // }
+        // function blurWin(){
+        //     newWindow.blur() 
+        // }
+        // var openbtn = document.getElementById("openbtn")
+        // var focusbtn = document.getElementById("focusbtn")
+        // var blurbtn = document.getElementById("blurbtn")
+
+        // openbtn.addEventListener("click",openWindow)
+        // focusbtn.addEventListener("click",focusWin)
+        // blurbtn.addEventListener("click",blurWin)
+
+        // moveby and moveto method
+        
+
+        // var openbtn = document.getElementById("openbtn")
+        // var focusbtn = document.getElementById("focusbtn")
+        // var blurbtn = document.getElementById("blurbtn")
+
+        // openbtn.addEventListener("click",openWindow)
+        // focusbtn.addEventListener("click",focusWin)
+        // blurbtn.addEventListener("click",blurWin)
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         // Attribute method
+        // var ele = document.getElementById("p1")
+        // console.log(ele.id)
+        // console.log(ele.className)
+        // console.log(ele.attributes[0])
+        // console.log(ele.attributes['id'])
+        
+        // setattributes
+        // element.setAttribute(name,value)
+        // p.setAttribute("id","mydiv")
+        // p.setAttribute("style","font-size:20px")
+
+        // getattributes
+        // element.getAttribute(attributename)
+        // var ele = element.getAttribute(attributename)
+
+        // var p = document.getElementById("p1")
+        // console.log(p)
+        // p.setAttribute("class","mynew")
+        // p.className = "myclass"
+        // p.setAttribute("title","newtitle")
+        // p.setAttribute("style","color:gray")
+        // p.style.color = "gray"
+        // p.className = "myclass"
+
+        // var getattr = p.getAttribute("id")
+        // console.log(p.id)
+        // console.log(getattr)
+
+        // element.removeAttribute()
+        // p.removeAttribute("class")
+
+        // hasAttribute()
+        // var attr = p.hasAttribute("id")
+        // var attr = p.hasAttribute("class")
+        // console.log(attr)
+         
+        // HTMl mapping
+        // document.getElementById("p1").className
+        // document.getElementById("p1").id
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="mydiv">
+        <h1 id="myh1">this is heading 1 tag</h1>
+        <h2>this is heading 2 tag</h2>
+
+    </div>
+    <main id="mymain">
+    <div id="div1">
+        <h1 id="h1">this is heading 1</h1>
+        <h2 id="h2">this is heading 2</h2>
+        <h3 id="h3">this is heading 3</h3>
+        
+    </div>
+    <div id="div3">
+        <div id="div2">
+            <ul id="mylist">
+                <li>Javascript</li>
+                <li id="node">Node Js</li>
+                <li id="react">React Js</li>
+            </ul>
+        </div>
+    </div>    
+        <ul>
+            <li>javascript 1</li>
+            <li id="js2">javascript 2</li>
+        </ul>
+    </main>-->
+    <p id="p1" class="p1element">this is p element</p>
+
+    <button id="btn"></button>
+
+
+
+
+    <script>
+        // appendChild element node using new and already element
+        // var elm = document.getElementById("mydiv")
+        // console.log(elm)
+        // var pnode = document.getElementById("mymain")
+        // // var cnode = document.getElementById("myh1")
+        // // pnode.appendChild(cnode)
+        // console.log(pnode)
+        // // var cnode = document.createElement("h2")
+        // pnode.appendChild(document.createElement("h2"))
+
+        // append text node
+        var pnode = document.getElementById("mydiv")
+        // var tnode = document.createTextNode("text to append ")
+        // pnode.appendChild(tnode)
+        // pnode.appendChild(document.createTextNode("text to append "))
+        // console.log(pnode)
+
+        // append comment node
+        var pnode = document.getElementById("mydiv")
+        // var cnode = document.createComment("comment to append")
+        // pnode.appendChild(cnode)
+        // pnode.appendChild(document.createTextNode("text to append "))
+        // console.log(pnode)
+
+        // adding more node element
+        // var pnode = document.getElementById("mydiv")
+        // enode = document.createElement("h2")
+        // tnode = document.createTextNode("this is h2 elemet text")
+        // cmnode = document.createComment("this is comment for h2 element")
+        // append text node and comment node to h2 node element
+        // enode.appendChild(tnode)
+        // enode.appendChild(cmnode)
+        // append node element to div element
+        // pnode.appendChild(enode)
+        // console.log(pnode)
+        
+        // append using DocumentFragment
+        // var df = document.createDocumentFragment();
+        // var hnode = document.createElement("h2")
+        // var pnode = document.createElement("p")
+
+        // hnode.textContent = "h2 element text"
+        // pnode.textContent = "p element text"
+        // console.log(hnode)
+        // console.log(pnode)
+        // append element h2 and p to df
+        // df.appendChild(hnode)
+        // df.appendChild(pnode)
+        // // console.log(df)
+        // divnode = document.getElementById("mydiv")
+        // divnode.appendChild(df)
+        // console.log(df)
+
+        // normalize method to add all text in one adjacent
+        var divnode = document.getElementById("mydiv")
+
+        // divnode.appendChild(document.createTextNode("this is"))
+        // divnode.appendChild(document.createTextNode("text node "))
+        // divnode.appendChild(document.createTextNode("to add in div element"))
+
+        // console.log(divnode.childNodes)
+        // divnode.normalize()
+        // console.log(divnode.childNodes)
+        // insertBefore method 
+        // syntax parentNode.insertBefore(newNode, referenceNode)
+        var parentNode = document.getElementById("mylist")
+        // var newNode = document.createElement("li")
+        // newNode.textContent  = "new list element"
+        // var moveNode = document.getElementById("react")
+        // var refNode = document.getElementById("node")
+        // parentNode.insertBefore(newNode, null)
+        
+        // using existing node and from other list
+        // var moveNode = document.getElementById("js2")
+        // parentNode.insertBefore(moveNode, refNode)
+        // var newNode = document.createTextNode("this is text")
+        // parentNode.insertBefore(newNode, refNode)
+        // console.log(parentNode)
+
+
+        // insertAdjacentElement method
+        // pos  =beforebegin | afterbegin | beforeend | afterend
+        // parentNode  = document.getElementById("div1")
+        // targetNode.insertAdjacentElement("pos", element)
+
+        // var h = document.getElementById("h2")
+        // var newElement = document.createElement("span")
+        // newElement.textContent = "this is span"
+        
+        // h.insertAdjacentElement("beforebegin",newElement)
+        // h.insertAdjacentElement("beforeend",newElement)
+        // h.insertAdjacentElement("afterbegin", newElement)
+        // h.insertAdjacentElement("afterend", newElement)
+        // console.log(parentNode)
+        
+        // insertAdjacentHTML method
+        // targetElement.insertAdjacentHTML("pos", element)
+        // pos = beforebegin |afterbegin | beforeend | afterend
+        parentNode = document.getElementById("div1")
+        // var h = document.getElementById("h2")
+        // var newHtml = "<span>this is span element</span>"
+        // h.insertAdjacentHTML("beforebegin", newHtml)
+        // h.insertAdjacentHTML("afterbegin", newHtml)
+        // h.insertAdjacentHTML("beforeend", newHtml)
+        // h.insertAdjacentHTML("afterend", newHtml)
+        // console.log(parentNode)
+
+        // insertAdjacentText method 
+        // targetElement.insertAdjacentText("pos",element)
+        // var h = document.getElementById("h2")
+        // var text1 = "this is text 1"
+        // h.insertAdjacentText("beforebegin",text1)
+        // h.insertAdjacentText("beforeend",text1)
+        // h.insertAdjacentText("afterbegin",text1)
+        // h.insertAdjacentText("afterend",text1)
+        // console.log(parentNode)
+
+        // innerHTML outerHTML innerText
+        var div = document.getElementById("div3")
+        var d = document.getElementById("div2")
+        var u = document.getElementById("mylist")
+        // u.innerHTML = "this is list "
+        // u.innerHTML = "<li>css</li><li>html</li><li>javascript</li>"
+    
+        // u.outerHTML = ""
+        // u.outerHTML = "<ol><li>2</li><li>3</li></ol>"
+        // u.outerHTML = "<p>this is paragraph</p>"
+        // d.outerHTML = "this is outerHTML"
+
+        // console.log(u.innerText)
+        // d.innerText = "<p>this is innerText</p>"
+        // console.log(d)
+
+        // Attribute method
+        // var ele = document.getElementById("p1")
+        // console.log(ele.id)
+        // console.log(ele.className)
+        // console.log(ele.attributes[0])
+        // console.log(ele.attributes['id'])
+        
+        // setattributes
+        // element.setAttribute(name,value)
+        // p.setAttribute("id","mydiv")
+        // p.setAttribute("style","font-size:20px")
+
+        // getattributes
+        // element.getAttribute(attributename)
+        // var ele = element.getAttribute(attributename)
+
+        var p = document.getElementById("p1")
+        console.log(p)
+        // p.setAttribute("class","mynew")
+        // p.className = "myclass"
+        // p.setAttribute("title","newtitle")
+        // p.setAttribute("style","color:gray")
+        // p.style.color = "gray"
+        // p.className = "myclass"
+
+        // var getattr = p.getAttribute("id")
+        // console.log(p.id)
+        // console.log(getattr)
+
+        // element.removeAttribute()
+        // p.removeAttribute("class")
+
+        // hasAttribute()
+        // var attr = p.hasAttribute("id")
+        // var attr = p.hasAttribute("class")
+        // console.log(attr)
+         
+        // HTMl mapping
+        // document.getElementById("p1").className
+        // document.getElementById("p1").id
+
+        // Event in js
+        var ele = document.getElementById("p1")
+        p.onclick = function(){alert("hello")}
+
+        document.getElementById("p1").onclick = function(){alert("hello")}
+
+
+    </script>
+</body>
+</html>
