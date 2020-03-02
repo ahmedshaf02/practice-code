@@ -139,6 +139,7 @@ for (var i in redmi){
 // console.log(Object.keys(redmi))
 for (var i in realme){
     // console.log(i +" "+realme[i])
+    console.log(i)
 }
 // console.log(Object.keys(realme))
 
@@ -211,7 +212,7 @@ fees.forEach(function(value,index){
 
 // for of loop
 for (let value of fees){
-    // console.log(value)
+    console.log(value)
 }
 
 // var input = prompt("enter length in number")
@@ -661,7 +662,7 @@ var date = new Date(2020,6,4,9,32)
 var date = new Date(2020,6,4,9)
 var date = new Date(2020,6,4)
 var date = new Date(2020,6)
-console.log(date)
+// console.log(date)
 
 
 

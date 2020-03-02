@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timer</title>
+</head>
+<body>
+    <!-- <h1 id="h1">00:00:00</h1> -->
+    <input type="text" id="name"/>
+    <input type="password" id="pass"/>
+    <button id="btn">submit</button>
+    <div id="div"></div>
+</body>
+<script>
+    // var name = document.getElementById("name")
+    // var pass = document.getElementById("pass")
+    // var btn = document.getElementById("btn")
+
+    // ar = []
+
+    // function saveData(n,s){
+      
+    // var name = document.getElementById("name")
+    // var pass = document.getElementById("pass")
+    // var btn = document.getElementById("btn")
+    //     var obj = {
+    //     name: n,
+    //     pass: s,
+    //     id: Date.now()
+    //     }
+       
+    //     ar.push(obj)
+    //     console.log(ar)
+    // }
+    // console.log(ar)
+    // var ls = localStorage.setItem("user","name123")
+    // var lsg = localStorage.getItem("user")
+    // console.log(lsg)
+    
+    // var btn = document.getElementById("btn")
+    // btn.addEventListener("click",function(){
+    //     var name = document.getElementById("name").value
+    //     var pass = document.getElementById("pass").value
+    //     saveData(name,pass)
+    // })
+   var ar = [
+       {
+           name:"name1",
+           pass:"1234",
+           id: ""
+       },
+       {
+           name:"name2",
+           pass:"1234",
+           id: ""
+       },
+       {
+           name:"name3",
+           pass:"1234",
+           id: ""
+       }
+   ]
+   localStorage.setItem("user",JSON.stringify(ar))
+   var lsget = JSON.parse(localStorage.getItem("user"))
+   console.log(lsget.length)
+    var btn = document.getElementById("btn")
+    btn.addEventListener("click",function(){
+        var name = document.getElementById("name").value
+        var pass = document.getElementById("pass").value
+        
+        // console.log(typeof pass)
+        // document.getElementById("div").textContent=""
+        // lsget.forEach(function(ele,i){
+        //     console.log(ele.name)
+        
+        if(name=="" || pass==""){
+            alert("user and pass can not be unfilled")
+        }
+        
+        else{
+            var count =0
+            for(var i=0;i<lsget.length;i++){
+            if(name==lsget[i].name && pass==lsget[i].pass){
+                alert("login success")
+                count++
+                var logout = 0
+            if(count>0){
+            // location.replace("dash.html")
+            var div = document.getElementById("div")
+            div.innerHTML += "<h1>"+name+"</h1>"+"<p>"+Date.now()+"</p>"
+            // var h1 = document.createElement("h1")
+            // var p = document.createElement("p")
+            lsget[i].id = Date.now()
+            // p.textContent = Date.now()
+            // h1.textContent = name
+            // div.append(h1,p)
+            console.log(lsget)
+            
+            var timeoutID = setInterval(function(){
+                logout++
+            var body = document.querySelector("body")
+            var p = document.createElement("p")
+            p.textContent += logout
+            body.append(p)
+                if(logout>10){
+                clearTime()
+            }
+            console.log(logout)
+
+            },500)
+            
+            function clearTime(){
+                alert("session timeout")
+               clearTimeout(timeoutID) 
+               location.replace("dash.html")
+            }
+            }
+            
+            
+                // console.log(lsget[i].name+" "+lsget[i].pass)
+                // break;
+            }
+            
+        }
+        }
+        if(count==0){
+                alert("enter correct user and pass")
+                
+            }
+        // }alert("enter correct user and pass")
+            // console.log(ele[i].name + " "+ele[i].pass)
+            // var div = document.getElementById("div")
+            // var p = document.createElement("p")
+            // p.textContent = ele
+            // div.append(p)
+        // })
+
+    })
+
+</script>
+</html>

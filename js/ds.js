@@ -60,52 +60,52 @@
 // }
 // console.log(ele)
 
-var input = "120 90 80\n90 80 110"
+// var input = "120 90 80\n90 80 110"
 
-input = input.split("\n")
-var st1 = input[0].split(" ")
-// console.log(st2)
-var phySt1 = Number(st1[0])
-var chemSt1 = Number(st1[1])
-var mathSt1 = Number(st1[2])
+// input = input.split("\n")
+// var st1 = input[0].split(" ")
+// // console.log(st2)
+// var phySt1 = Number(st1[0])
+// var chemSt1 = Number(st1[1])
+// var mathSt1 = Number(st1[2])
 
-// console.log(mathSt1)
+// // console.log(mathSt1)
 
-var st2 = input[1].split(" ")
-var phySt2 = Number(st2[0])
-var chemSt2 = Number(st2[1])
-var mathSt2 = Number(st2[2])
-// console.log(mathSt2)
-// console.log(phySt2)
+// var st2 = input[1].split(" ")
+// var phySt2 = Number(st2[0])
+// var chemSt2 = Number(st2[1])
+// var mathSt2 = Number(st2[2])
+// // console.log(mathSt2)
+// // console.log(phySt2)
 
-var totalSt1 = 0
-var totalSt2 = 0
-for(var i=0; i<st1.length; i++){
+// var totalSt1 = 0
+// var totalSt2 = 0
+// for(var i=0; i<st1.length; i++){
     
-    totalSt1+= Number(st1[i])
-    totalSt2+= Number(st2[i])
-}
+//     totalSt1+= Number(st1[i])
+//     totalSt2+= Number(st2[i])
+// }
 
-if(totalSt1>totalSt2){
-    console.log("First t")
-}
-if(totalSt1 < totalSt2){
-    console.log("Second t")   
-}
-else if(totalSt1 == totalSt2){
-    if(mathSt1 > mathSt2){
-        console.log("First m")
-    }if(mathSt1<mathSt2){
-         console.log("Second m") 
-    }
-    else if(mathSt1==mathSt2){
-        if(phySt1 > phySt2){
-        console.log("First p")
-    }if(phySt1 < phySt2){
-         console.log("Second p") 
-    }
-    }
-}
+// if(totalSt1>totalSt2){
+//     console.log("First t")
+// }
+// if(totalSt1 < totalSt2){
+//     console.log("Second t")   
+// }
+// else if(totalSt1 == totalSt2){
+//     if(mathSt1 > mathSt2){
+//         console.log("First m")
+//     }if(mathSt1<mathSt2){
+//          console.log("Second m") 
+//     }
+//     else if(mathSt1==mathSt2){
+//         if(phySt1 > phySt2){
+//         console.log("First p")
+//     }if(phySt1 < phySt2){
+//          console.log("Second p") 
+//     }
+//     }
+// }
 
 
    //  You are provided 3 integers: left,
@@ -125,3 +125,4 @@ else if(totalSt1 == totalSt2){
 // 2 5 4 4 4
 
 // 7
+

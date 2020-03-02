@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+   async function get(){
+        // return 10;
+        return new Promise((resol,rej)=>{
+            setTimeout(function(){
+                resol("ok resolve")
+            },2000)
+            
+        })
+    }
+    // async function disp(){
+    //     var x = await get()
+    //     console.log(x)
+    // }
+    // with try 
+    async function disp(){
+        try{
+        var x = await get()
+        console.log(x)
+        }catch(err){
+            console.log(err)
+        }
+        
+    }
+
+disp()
+//we can use get method to use promise and async await
+// get().then(data =>{
+//     console.log(data)
+// })
+
+// console.log(get()) it will return promise
+
+
+
+</script>
+</html>

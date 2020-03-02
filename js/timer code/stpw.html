@@ -1,0 +1,117 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            /* display: flex;
+            justify-content: center;
+            align-content: center; */
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 20%;
+            left: 40%;
+            /* transform: translate(-50%,-50%); */
+            /* border: 2px solid black; */
+            border-radius: 5px;
+            text-align: center;
+        }
+        button{
+            background-color: rgba(0, 60, 255, 0.897);
+            width: 80px;
+            height: 40px;
+            color: white;
+            cursor: pointer;
+            outline: none;
+            border: 1px solid white;
+            border-radius: 5px;
+            font-size: 18px;
+
+        }
+        #timer{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="timer">
+        <h1>stopwatch timer</h1>
+    </div>
+    <div class="main">
+        <h1 id="h1">00:00:00</h1>
+        <button id="stp" onclick="start1()">start</button>
+        <button id="pause" onclick="pause1()">pause</button>
+        <button id="reset" onclick="reset1()">reset</button> 
+    </div>
+</body>
+<script>
+  
+var h1 = document.getElementById("h1")
+var min = 0
+var sec = 0
+var hrs = 0
+var displayMin;
+var displaySec;
+var displayHrs;
+
+function stopwatch(){
+    sec++
+    if(sec/60==1){
+        min++
+        sec = 0
+    }
+    if(min/60==1){
+        hrs++
+        min = 0
+    }
+    if(min<10){
+        displayMin = "0"+min
+    }else{
+        displayMin  = min
+    }
+
+    if(sec<10){
+        displaySec = "0"+sec
+    }else{
+        displaySec  = sec
+    }
+
+    if(hrs<10){
+        displayHrs = "0"+hrs
+    }else{
+        displayHrs  = hrs
+    }
+
+
+    h1.innerHTML = displayHrs+ ":"+ displayMin +":"+ displaySec
+}
+var intervalId = setInterval(function(){
+    stopwatch()
+},1000)
+
+function pause1(){
+    clearInterval(intervalId)
+}
+
+function reset1(){
+    pause1()
+    h1.innerHTML = "00:00:00"
+}
+function start1(){
+    location.reload()
+}
+var stp = document.getElementById("stp")
+var pause = document.getElementById("pause")
+var reset = document.getElementById("reset")
+
+// reset.addEventListener("click",function(){
+//     reset()
+// })
+
+</script>
+</html>

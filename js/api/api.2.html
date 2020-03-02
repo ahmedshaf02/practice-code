@@ -1,0 +1,52 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>api</title>
+</head>
+<body>
+    <input type="text" id="input"/>
+    <button id="data">data fetch</button>
+    <div id="div">
+        
+    </div>
+</body>
+<script>
+    
+    var btn = document.getElementById("data")
+    btn.addEventListener("click", async function(){
+    
+    var input = document.getElementById("input").value
+    // console.log(input)
+    
+    var data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&units=metric&APPID=409dc801f22f69fa984ead1d03d12f8f`)
+    var data2 = await data.json()
+        // console.log(data2)
+        // console.log(data2.name)
+        // console.log(data2.main.temp)
+        // console.log(data2.weather[0].description)
+        // console.log(data2.wind.speed)
+
+        document.getElementById("div").innerHTML =`
+    <ul>
+            <li>city : ${data2.name}</li>
+            <li>temp in c: ${data2.main.temp}</li>
+            <li>discription : ${data2.weather[0].description}</li>
+            <li>min temp- ${data2.main.temp_min}</li>
+            <li>max temp- ${data2.main.temp_max}</li>
+    </ul>
+
+    `
+    })
+    // .catch(err=>{//this catch use with promise not with async
+    // //     console.log(err)
+    // // })
+    
+
+
+
+</script>
+</html>
