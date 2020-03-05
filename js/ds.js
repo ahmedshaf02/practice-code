@@ -126,3 +126,7 @@
 
 // 7
 
+var input = "masai"
+input.sort()
+console.log(input)
+
