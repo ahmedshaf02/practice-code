@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myform">
+        <!-- <input name="firstname" type="text" required/>
+        <input name="pass" type="password" required/> -->
+        <label>username</label>
+        <input name="firstname"/>
+        <p class="display">Username must be between 5-10 </p>
+
+        <label>password</label>
+        <input name="pass" type="password"/>
+        <p class="display">password must be between 8-20 </p>
+
+        <label>email</label>
+        <input name="email"/>
+        <p class="display">ex. example@gmail.com </p>
+
+        <label>mobile</label>
+        <input name="mobile"/>
+        <p class="display">mobile must be 10digit </p>
+
+        <input type="submit"/>
+    </form>
+</body>
+<script>
+    var frm = document.getElementById("myform")
+
+
+    frm.addEventListener("submit",function(e){
+        e.preventDefault();
+
+        var reg = /name1/i
+        if(!e.target[0].value){
+            alert("name")
+        }
+    
+            
+
+    })
+</script>
