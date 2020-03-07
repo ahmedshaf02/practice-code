@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="input"/>
+    <button id="data">data fetch</button>
+    <div id="div">
+        
+    </div>
+</body>
+<script>
+    var btn = document.getElementById("data")
+    btn.addEventListener("click",function(){
+        var xhr = new XMLHttpRequest()
+        console.log(xhr)
+    var input = document.getElementById("input").value
+        console.log(input)
+    var url = `https://api.openweathermap.org/data/2.5/weather?q=${input}&units=metric&APPID=409dc801f22f69fa984ead1d03d12f8f`
+
+    xhr.open("GET",url) 
+    // xhr.setRequestHeader("Content-type","application/json; charset=utf-8")
+    xhr.send()    
+    xhr.onload = function(){
+        console.log(this.status)
+        console.log(this.response)
+       var data = JSON.parse(this.response)
+       console.log(data)
+       console.log(data.name)
+       console.log(data.main.temp)
+       console.log(data.weather[0].description)
+       console.log(data.wind)
+
+
+       document.getElementById("div").innerHTML =`
+    <ul>
+            <li>city : ${data.name}</li>
+            <li>temp in c: ${data.main.temp}</li>
+            <li>discription : ${data.weather[0].description}</li>
+            <li>min temp- ${data.main.temp_min}</li>
+            <li>max temp- ${data.main.temp_max}</li>
+    </ul>
+
+    `
+    }
+
+    
+
+
+
+
+    })
+
+
+
+
+</script>
+</html>

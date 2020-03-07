@@ -1,0 +1,58 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="input"/>
+    <button id="data">data fetch</button>
+    <div id="div">
+        
+    </div>
+</body>
+<script>
+    var btn = document.getElementById("data")
+    btn.addEventListener("click",function(){
+        var xhr = new XMLHttpRequest()
+        console.log(xhr)
+    var input = document.getElementById("input").value
+        console.log(input)
+    
+    var url = "https://api.ratesapi.io/api/latest?base=USD&symbols=GBP"
+    xhr.open("GET",url)
+    // xhr.setRequestHeader("Content-type","application/json; charset=utf-8")
+    xhr.send()    
+    xhr.onload = function(){
+        console.log(this.status)
+        console.log(this.response)
+       var data = JSON.parse(this.response)
+       console.log(data)
+    //    document.getElementById("div").innerHTML =`
+    // <ul>
+    //         <li>city : ${data.name}</li>
+    //         <li>temp in c: ${data.main.temp}</li>
+    //         <li>discription : ${data.weather[0].description}</li>
+    //         <li>min temp- ${data.main.temp_min}</li>
+    //         <li>max temp- ${data.main.temp_max}</li>
+    // </ul>
+
+    // `
+    }
+
+    
+
+
+
+
+    })
+
+
+
+
+</script>
+</html>
