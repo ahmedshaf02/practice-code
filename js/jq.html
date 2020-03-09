@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border:1px solid black;
+                padding: 10px;
+                margin: 10px;
+            
+        }
+        #div4{
+            background-color: tomato;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+        .class-1{
+            font-size: 40px;
+            color: tomato;
+
+        }
+        .class-2{
+            background-color: gray;
+            /* color: white; */
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <button id="btn1">button 1</button>
+    <button id="btn2">button 2</button>
+    <div id="div1" class="div" >
+        <p>this is paragraph in div1</p>
+    </div>
+    <div id="div2" class="div">
+        <p id="p1">this is paragraph in div1</p>
+    </div>
+    <div class="div">
+        <p>this is paragraph in div1</p>
+    </div>
+    <div class="div" id="div3">
+        <ul>
+            <li>item1</li>
+            <li>item1</li>
+            <li>item1</li>
+        </ul>
+    </div> -->
+    <!-- <div id="div4">
+
+    </div> -->
+
+    <!-- <button id="btn1">get value</button>
+    <button id="btn2">set value</button>
+    <p id="p1">this is p tag</p>
+    <div id="div2" class="divclass">
+        <p id="p2" class="class-p">this is p tag</p>
+    </div> -->
+    <!-- <button id="append1">append</button>
+    <button id="after1">after</button>
+    <button id="prepend1">prepend</button>
+
+    <button id="before1">before</button> -->
+    
+    <button id="add1">add class</button>
+    <button id="add2">remove class</button>
+    <button id="add3">get value</button>
+    <button id="add4">toggle class</button>
+
+    
+    <div id="div-1" style="border: 1px solid black;padding: 20px;">
+        <p class="p-1">this is p1 tag inside div</p>
+        <p class="p-2">this is p2 tag inside div</p>
+        <p id="p-1" class="class-3">this is p3 tag inside div</p>
+        <p id="p-2">this is p4 tag inside div</p>
+        <span>this is span </span>
+    </div>
+
+
+<!-- <script src="jquery.js"> -->
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+</script>
+<script>
+    $(document).ready(function(){
+
+        // addClass removeClass toggleClass
+        $("#add1").click(function(){
+            $("#div-1").addClass("class-1 class-2")
+        })
+        $("#add2").click(function(){
+            $("#div-1").removeClass("class-2")
+        })
+        
+        $("#add3").click(function(){
+            $("#div-1").attr("class","class-2 class-1")
+        })
+        $("#add4").click(function(){
+            $("#div-1").toggleClass("class-2 class-1")
+        })
+
+
+
+        // append after before prepend remove 
+        // $("#append1").click(function(){
+            // $("#div-1").append("<p>this is new p tag</p>")
+            // $("#div-1").after("<p>this is new p tag</p>")
+            // $("#div-1").prepend("<p>this is new p tag</p>")
+            // $("#div-1").before("<p>this is new p tag</p>")
+            // $("#div-1").remove()
+            // $("p").remove("#p-1")
+            // $("p").remove("#p-1, #p-2")
+            // $("p").remove("#p-1, #p-2")
+            // $("p").remove(".p-1,.p-2")
+            // $("#div-1").empty()
+
+        // })
+
+
+
+
+    //set value
+    // $("#btn2").click(function(){
+
+    // $("#p2").attr("class","p1class p2class")
+    // // console.log(cls)
+    // })
+
+    // $("#btn1").click(function(){
+
+    // var cls = $("#p2").attr("class")
+    // console.log(cls)
+    // })
+
+    // $("#btn1").click(function(){
+
+    // var cls = $("#p2").css({
+    //     "color": "gray",
+    //     "font-size":"20px"
+    // })
+
+    // })
+
+
+
+
+
+
+
+
+        // get values
+        // $("#btn2").click(function(){
+
+        //     alert($("#div2").attr("class","div1class div2class"))
+        //     })
+
+        // $("#btn1").click(function(){
+
+            // alert($("#div2").html())
+            // alert($("#div2").text())
+            // var txt = $("#div2").text()
+            // alert(txt)
+
+            // $("#div2").text("this is changed p tag")
+        //     $("#div2").html("<ul><li>2</li><li>3</li></ul>")
+
+        //    alert($("#div2").attr("id"))
+        // })
+
+        // $("#div2").html("<ul><li>2</li><li>3</li></ul>")
+
+        //    alert($("#div2").css("font-size"))
+        //    alert($("#div2").css("color"))
+
+        // })
+        
+        
+        
+
+
+
+
+    })
+
+
+
+
+    // var btn = document.getElementById("btn")
+    // jq selector
+    // btn.addEventListener("click", function(){
+        // $("selector").action(time)
+        // $(".heading").fadeToggle(1000)
+        // $("#heading").fadeToggle(1000)
+        // $("h2").fadeToggle(1000)
+        // $(".div").fadeToggle(1000)
+        // $("#div1,#div2,p,li").fadeToggle(1000)
+        // $("p,li").fadeToggle(1000)
+        // $("div p").fadeToggle(1000)
+        // $("#div1 >p").fadeToggle(1000)
+        // $("p:first").fadeToggle(1000)
+        // $("p:last").fadeToggle(1000)
+        // $("li:even").fadeToggle(1000)
+    // })
+    // jq event
+    // $("#btn").click(function(){
+    //     $("li:even").fadeToggle(1000)
+    // })
+    // $("#btn").click(toggle)
+
+    //     function toggle(){
+    //     $("li:even").fadeToggle(1000)
+    // }
+
+    // on ready for jq after
+    // $(document).ready(function(){
+
+        // $("#btn").mouseenter(toggle)
+        // $("#btn").mouseleave(toggle1)
+        // $("#btn").hover(toggle,toggle1)
+
+        // function toggle(){
+        //     $("div").fadeOut(100)
+        // }
+        // function toggle1(){
+        //     $("div").fadeIn(100)
+        // }
+        // $("#btn1").dblclick(function(){
+        //     $("#div3").fadeOut(1000)
+        // })
+        // $("#btn1").click(function(){
+        //     $("#div3").hide(1000)
+        // })
+
+        // $("#btn2").click(function(){
+        //     $("#div3").show(1000)
+        // })
+        // $("#btn1").click(function(){
+        //     $("#div3").toggle(1000)
+        // })
+        // $("#btn1").click(function(){
+        //     $("#div3").slideUp(600)
+        // })
+        // $("#btn2").click(function(){
+        //     $("#div3").slideDown(600)
+        // })
+        // $("#btn1").click(function(){
+        //     $("#div3").slideToggle(1000)
+        // })
+        // $("#btn2").click(function(){
+        //     $("#div4").animate({
+        //         width:'150px',
+        //         height:'150px',
+        //         left:'200px' 
+        //     },1000)
+        // })
+        // $("#btn2").click(function(){
+        //     $("#div1").fadeToggle(1000,function(){
+        //         alert("toggle done");
+        //     })
+            
+        // })
+        // function toggle(){
+        //         alert("toggle done");
+        //     }
+        // $("#btn2").click(function(){
+        //     $("#div1").fadeToggle(1000,toggle)
+            
+        // })
+            //chaining method
+        // $("#btn2").click(function(){
+
+        //     // $("#div2").slideUp(1000)
+        //     // $("#div2").slideDown(1000)
+        //     $("#div2").slideUp(1000).slideDown(1000).fadeOut(1000).fadeIn(1000)
+            
+
+        // })
+        
+            
+    // })
+    
+
+</script>
+</body>
+</html>

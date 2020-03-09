@@ -75,7 +75,7 @@
                         <option value="USD">USD - US Dollar</option>
                         <option value="EUR">EUR - Euro</option>
                         <option value="GBP">GBP - British Pound</option>
-                        <option value="INR">HKD - Hong Kong Dollar</option>
+                        <option value="HKD">HKD - Hong Kong Dollar</option>
                         <option value="AUD">AUD - Australian Dollar</option>
                         <option value="CAD">CAD - Canadian Dollar</option>
                         <option value="SGD">SGD - Singapore Dollar</option>
@@ -93,10 +93,10 @@
             <!-- sample data to show -->
             <div class="text-center">
                 <h1 id="base">1 USD =</h1>
-                <h1 id="value" class="display-4">0.885776 EUR</h1>
+                <span id="value" class="display-2" style="font-weight: 400;">0.885776</span><span id="unit" class="h1"> EUR</span>
                 <h5 id="to">1 EUR = 1.12895 USD</h5>
                 <h5 id="from">1 USD = 0.885776 EUR</h5>
-                <p>Last updated: <span id="date"> 06/03/2020</span></p>
+                <span>Last updated: </span><span id="date"> 06/03/2020</span>
                 <p>All figures are live mid-market rates, which are not available to consumers and<br/>
                      are for informational purposes only.</p>
             </div>
@@ -139,7 +139,8 @@
        console.log(data1)
 
 // calculation manually based on api data
-var value = Number(input)*Number(data2)
+var ans = Number(input)*Number(data2)
+var value = ans.toFixed(6)
 console.log(value)
 
 // xhr calling twice with different get call url
@@ -159,10 +160,11 @@ var url1 = `https://api.ratesapi.io/api/latest?base=${to}&symbols=${from}`
        console.log(value3)
 
     // displaying output in browser and replacing sample text
-var value = Number(input)*Number(data2)
-console.log(value)
+// var value = Number(input)*Number(data2)
+// console.log(value)
 var line1 = document.getElementById("base").innerHTML = input+" "+from+" ="
-var line1 = document.getElementById("value").innerHTML =value + " "+to
+var line1 = document.getElementById("value").innerHTML =value
+var line1 = document.getElementById("unit").innerHTML =" "+to
 var line1 = document.getElementById("to").innerHTML = "1 "+to+" = "+value2 +" "+from
 var line1 = document.getElementById("from").innerHTML = "1 "+from+" = "+data2 +" "+to
 var line1 = document.getElementById("date").innerHTML = data1
