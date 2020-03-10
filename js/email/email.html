@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myform">
+        <!-- <input name="firstname" type="text" required/>
+        <input name="pass" type="password" required/> -->
+        <input name="firstname"/>
+        <input name="pass" type="password" />
+        <input type="submit"/>
+    </form>
+</body>
+<script>
+    var frm = document.getElementById("myform")
+    frm.addEventListener("submit",function(e){
+        e.preventDefault();
+        // console.log("form submit")
+        // console.log(e.target[0].value.length)
+        // console.log(e.target[1].value.length)
+
+        if(e.target[0].value==""||e.target[1].value==""){
+            alert("filled value please")
+        }
+        else if(e.target[0].value.length<5){
+            alert("user length between 5-10")
+            // console.log(e.target)
+        }
+        else if(e.target[1].value.length<5){
+            alert("pass length between 5-10")
+            // console.log(e.target)
+        }else{
+            alert("ok")
+        }
+        // else{
+        //     alert("length should be between 5 -10")
+        // }
+        // if(e.target[1].value.length>=5 && e.target[1].value.length<=10){
+        //     console.log("ok")
+        // }else{
+        //     alert("length should be between 5 -10")
+        // }
+            
+
+    })
+</script>
+</html>

@@ -5,30 +5,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
 </head>
 <body>
-    <form id="myform" name="myform">
-        <!-- <input name="firstname" type="text" required/>
-        <input name="pass" type="password" required/> -->
-        <label>username</label>
-        <input name="firstname"/><small id="uSmall"></small>
-        <p class="display">Username must be between 5-10 </p>
+    <form id="myform" name="myform" class="">
 
-        <label>password</label>
-        <input name="pass" type="password"/><small id="pSmall"></small>
-        <p class="display">password must be between 8-20 </p>
-
-        <label>email</label>
-        <input name="email" ><small id="eSmall"></small>
-        <p class="display">ex. example@gmail.com </p>
-
-        <label>mobile</label>
-        <input name="mobile"/><small id="small"></small>
-        <p class="display">mobile must be 10digit </p>
-
-        <input type="submit"/>
+        
+        <div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col-6">
+                            <label>username</label>
+                            <input name="firstname" class="form-control"/><span id="uSmall"></span>
+                            <p class="display">Username must be between 5-10 </p>
+                        </div>
+                        <div class="col-3"></div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col-6">
+                            <label>password</label>
+                            <input name="pass" type="password" class="form-control"/><small id="pSmall"></small>
+                            <p class="display">password must be between 8-20 </p>
+                        </div>
+                        <div class="col-3"></div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col-6">
+                            <label>email</label>
+                            <input name="email" class="form-control"><small id="eSmall"></small>
+                            <p class="display">ex. example@gmail.com </p>
+                        </div>
+                        <div class="col-3"></div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col-6">
+                            <label>mobile</label>
+                            <input name="mobile" class="form-control"/><small id="small"></small>
+                            <p class="display">mobile must be 10digit </p>
+                        </div>
+                        <div class="col-3"></div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col-6">
+                            <input type="submit" class="form-control btn-primary">
+                        </div>
+                        <div class="col-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
 </body>
+<script src="bootstrap.js"></script>
 <script>
     
     // var frm = document.getElementById("myform")

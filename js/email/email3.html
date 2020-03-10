@@ -1,40 +1,95 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
 </head>
 <body>
-    <form id="myform" name="myform">
-        <!-- <input name="firstname" type="text" required/>
-        <input name="pass" type="password" required/> -->
-        <label>username</label>
-        <input name="firstname"/><small id="uSmall"></small>
-        <p class="display">Username must be between 5-10 </p>
+    <form id="myform" name="myform" class="">
 
-        <label>password</label>
-        <input name="pass" type="password"/><small id="pSmall"></small>
-        <p class="display">password must be between 8-20 </p>
-
-        <label>email</label>
-        <input name="email" ><small id="eSmall"></small>
-        <p class="display">ex. example@gmail.com </p>
-
-        <label>mobile</label>
-        <input name="mobile"/><small id="small"></small>
-        <p class="display">mobile must be 10digit </p>
-
-        <input type="submit"/>
+        
+        <div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4 ">
+                            <label>username</label>
+                            <input name="firstname" class="form-control"/><span id="uSmall"></span>
+                            <!-- <input name="firstname" class="form-control col-6"/><span id="uSmall"></span> -->
+                            <p class="display">Username must be between 5-10 </p>
+                        </div>
+                        <div class="col-4"></div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <label>password</label>
+                            <input name="pass" type="password" class="form-control"/><small id="pSmall"></small>
+                            <p class="display">password must be between 8-20 </p>
+                        </div>
+                        <div class="col-4"></div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <label>email</label>
+                            <input name="email" class="form-control"><small id="eSmall"></small>
+                            <p class="display">ex. example@gmail.com </p>
+                        </div>
+                        <div class="col-4"></div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <label>mobile</label>
+                            <input name="mobile" class="form-control"/><small id="small"></small>
+                            <p class="display">mobile must be 10digit </p>
+                        </div>
+                        <div class="col-4"></div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <input type="submit" class="form-control btn-primary">
+                        </div>
+                        <div class="col-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
 </body>
+<script src="bootstrap.js"></script>
 <script>
     
-    // var frm = document.getElementById("myform")
+    validate()
+    var temp;
+    
+    var frm = document.getElementById("myform")
 
 
-    // frm.addEventListener("submit",function(e){
+    frm.addEventListener("submit",function(e){
+        e.preventDefault();
+        if(validate()){
+            console.log(temp)
+        }else{
+            alert("please fill again")
+        }
+        console.log("submit")
+    })
     //     e.preventDefault();
 
     //     var reg = /name1/i
@@ -57,6 +112,7 @@
         // RegExp for username password email mobile
 
 
+       function validate(){
         var pattern = {
             username: /^[a-z\d]{5,12}$/i,
             password:/^[\w@-]{8,15}$/i,
@@ -64,9 +120,10 @@
             email:/^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,6})(\.[a-z]{2,6})?$/i
             //abc@example.com.in
         }
-        var form  = document.getElementById("myform")
-        form.addEventListener("submit",function(e){
-            e.preventDefault()
+     
+        // var form  = document.getElementById("myform")
+        // form.addEventListener("submit",function(e){
+        //     e.preventDefault()
             // console.log(e.target.email.value)
             // console.log(e.target[2])
             // if(pattern.mobile.test(e.target[3].value)){
@@ -75,17 +132,19 @@
             //     document.myform.mobile.style.backgroundColor = "green"
             // }
             // console.log(document.myform.firstname.value)
-        })
+        // })
         document.myform.mobile.addEventListener("keyup",function(){
             if(pattern.mobile.test(document.myform.mobile.value)){
                 document.myform.mobile.style.border = "2px solid green"
                 document.getElementById("small").innerText="valid"
                 document.getElementById("small").style.color="green"
+                temp = true
             }else{
                 document.myform.mobile.style.border = "3px solid crimson"
                 document.getElementById("small").innerText=" not valid"
                 document.getElementById("small").style.color="crimson"
                 // alert("mobile not ")
+                temp = false
             }
         })
         document.myform.email.addEventListener("keyup",function(){
@@ -93,11 +152,13 @@
                 document.myform.email.style.border = "2px solid green"
                 document.getElementById("eSmall").innerText="valid"
                 document.getElementById("eSmall").style.color="green"
+                temp = true
             }else{
                 document.myform.email.style.border = "3px solid crimson"
                 document.getElementById("eSmall").innerText=" not valid"
                 document.getElementById("eSmall").style.color="crimson"
                 // alert("mobile not ")
+                temp = false
             }
         })
         document.myform.firstname.addEventListener("keyup",function(){
@@ -105,11 +166,13 @@
                 document.myform.firstname.style.border = "2px solid green"
                 document.getElementById("uSmall").innerText="valid"
                 document.getElementById("uSmall").style.color="green"
+                temp = true
             }else{
                 document.myform.firstname.style.border = "3px solid crimson"
                 document.getElementById("uSmall").innerText=" not valid"
                 document.getElementById("uSmall").style.color="crimson"
                 // alert("mobile not ")
+                temp = false
             }
         })
         document.myform.pass.addEventListener("keyup",function(){
@@ -117,13 +180,18 @@
                 document.myform.pass.style.border = "2px solid green"
                 document.getElementById("pSmall").innerText="valid"
                 document.getElementById("pSmall").style.color="green"
+                temp = true
             }else{
                 document.myform.pass.style.border = "3px solid crimson"
                 document.getElementById("pSmall").innerText=" not valid"
                 document.getElementById("pSmall").style.color="crimson"
                 // alert("mobile not ")
+                temp =  false
             }
+        
         })
+        return temp
+       }
         
         
         

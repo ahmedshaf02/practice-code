@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading"></h1>
+
+    <script>
+        //how to get time by timestamp in js
+        
+        function timeStamp(time){
+            var t= new Date(time*1000)
+            var hr = t.getHours();
+            var mins = "0"+t.getMinutes();
+            var sec = "0"+ t.getSeconds()
+            var date = t.getDate()
+            var date1 = t.getMonth()
+            // return hr+ " : "+mins.substr(-2)+" : "+sec.substr(-2)
+           return t.getUTCDay()
+        }
+    
+        document.getElementById("heading").textContent = timeStamp(1583847413
+)
+
+
+    </script>
+</body>
+</html>
