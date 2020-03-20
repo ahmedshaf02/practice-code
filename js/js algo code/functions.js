@@ -67,3 +67,28 @@
    
 // }
 // console.log(isPrimeNumber(14))
+
+// factorial of a number
+// function fact(n){
+//    if(n==0){
+//       return 1
+//    }else{
+//       return n* fact(n-1)
+//    }
+// }
+
+// var fn = fact(4)
+// console.log(fn)
+
+// fibbonacci funct
+// function fibbo(n){
+//    if(n <=1){
+//       return 1
+//    }else{
+//       return fibbo(n-1)+ fibbo(n-2)
+//    }
+// }
+// var fn = fibbo(5)
+// console.log(fn)
+
+// var input = ""
