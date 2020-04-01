@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="bootstrap.css">
 </head>
 <body>
+
+    <h4 class="text-center">Please fill the form</h4>
     <form id="myform" name="myform" class="">
 
         
@@ -18,10 +20,22 @@
                     <div class="row">
                         <div class="col-4"></div>
                         <div class="col-4 ">
-                            <label>username</label>
+                            <label>Name</label>
                             <input name="firstname" class="form-control"/><span id="uSmall"></span>
                             <!-- <input name="firstname" class="form-control col-6"/><span id="uSmall"></span> -->
-                            <p class="display">Username must be between 5-10 </p>
+                            <p class="display">Name must be between 5-15 </p>
+                        </div>
+                        <div class="col-4"></div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4 ">
+                            <label>Username</label>
+                            <input name="uname" class="form-control"/><span id="nSmall"></span>
+                            <!-- <input name="firstname" class="form-control col-6"/><span id="uSmall"></span> -->
+                            <p class="display">Username must be between 5-15 </p>
                         </div>
                         <div class="col-4"></div>
                     </div>
@@ -62,6 +76,18 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="col-4"></div>
+                        <div class="col-4 ">
+                            <label>Desciption</label>
+                            <input name="des" class="form-control"/><span id="dSmall"></span>
+                            <!-- <input name="firstname" class="form-control col-6"/><span id="uSmall"></span> -->
+                            <p class="display">desciption must be between 10-30</p>
+                        </div>
+                        <div class="col-4"></div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-4"></div>
                         <div class="col-4">
                             <input type="submit" class="form-control btn-primary">
                         </div>
@@ -72,24 +98,54 @@
         </div>
     </form>
 </body>
-<script src="bootstrap.js"></script>
+<!-- <script src="bootstrap.js"></script> -->
 <script>
     
     validate()
     var temp;
+    
     
     var frm = document.getElementById("myform")
 
 
     frm.addEventListener("submit",function(e){
         e.preventDefault();
-        if(validate()){
-            console.log(temp)
+        // if(validate()){
+        //     console.log(temp)
+        //     document.myform.mobile.value
+        // }else{
+        //     alert("please fill again")
+        // }
+        var obj={}
+        obj.name = document.myform.firstname.value
+        obj.email = document.myform.email.value
+        obj.mobile = document.myform.mobile.value
+        obj.description = document.myform.des.value
+        obj.username = document.myform.uname.value
+        obj.password = document.myform.pass.value
+        console.log(obj)
+
+    var x= new XMLHttpRequest()
+    console.log(x)
+    
+    var url ="http://localhost:8080/auth/register";
+    x.open("POST",url)
+    x.setRequestHeader("Content-type","application/json;charset=utf-8")
+    x.send(JSON.stringify(obj))
+    x.onload = function(){
+        if(this.status===200){
+            console.log(this.response)
+        var resp = JSON.parse(this.response)
+        console.log(resp)
         }else{
-            alert("please fill again")
+            console.log("erroe has occured please try again")
         }
-        console.log("submit")
+        
+    
+    }
+    
     })
+    // console.log(obj)
     //     e.preventDefault();
 
     //     var reg = /name1/i
@@ -114,10 +170,12 @@
 
        function validate(){
         var pattern = {
-            username: /^[a-z\d]{5,12}$/i,
+            name: /^[a-z\d]{5,12}$/i,
             password:/^[\w@-]{8,15}$/i,
             mobile:/^\d{10}$/,
-            email:/^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,6})(\.[a-z]{2,6})?$/i
+            email:/^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,6})(\.[a-z]{2,6})?$/i,
+            username: /^[a-z\d]{5,12}$/i,
+            des: /^[a-z\d]{10,20}$/i
             //abc@example.com.in
         }
      
@@ -138,13 +196,13 @@
                 document.myform.mobile.style.border = "2px solid green"
                 document.getElementById("small").innerText="valid"
                 document.getElementById("small").style.color="green"
-                temp = true
+                // temp = true
             }else{
                 document.myform.mobile.style.border = "3px solid crimson"
                 document.getElementById("small").innerText=" not valid"
                 document.getElementById("small").style.color="crimson"
                 // alert("mobile not ")
-                temp = false
+                // temp = false
             }
         })
         document.myform.email.addEventListener("keyup",function(){
@@ -158,21 +216,21 @@
                 document.getElementById("eSmall").innerText=" not valid"
                 document.getElementById("eSmall").style.color="crimson"
                 // alert("mobile not ")
-                temp = false
+                // temp = false
             }
         })
         document.myform.firstname.addEventListener("keyup",function(){
-            if(pattern.username.test(document.myform.firstname.value)){
+            if(pattern.name.test(document.myform.firstname.value)){
                 document.myform.firstname.style.border = "2px solid green"
                 document.getElementById("uSmall").innerText="valid"
                 document.getElementById("uSmall").style.color="green"
-                temp = true
+                // temp = true
             }else{
                 document.myform.firstname.style.border = "3px solid crimson"
                 document.getElementById("uSmall").innerText=" not valid"
                 document.getElementById("uSmall").style.color="crimson"
                 // alert("mobile not ")
-                temp = false
+                // temp = false
             }
         })
         document.myform.pass.addEventListener("keyup",function(){
@@ -180,13 +238,43 @@
                 document.myform.pass.style.border = "2px solid green"
                 document.getElementById("pSmall").innerText="valid"
                 document.getElementById("pSmall").style.color="green"
-                temp = true
+                // temp = true
             }else{
                 document.myform.pass.style.border = "3px solid crimson"
                 document.getElementById("pSmall").innerText=" not valid"
                 document.getElementById("pSmall").style.color="crimson"
                 // alert("mobile not ")
-                temp =  false
+                // temp =  false
+            }
+        
+        })
+        document.myform.des.addEventListener("keyup",function(){
+            if(pattern.des.test(document.myform.des.value)){
+                document.myform.pass.style.border = "2px solid green"
+                document.getElementById("dSmall").innerText="valid"
+                document.getElementById("dSmall").style.color="green"
+                // temp = true
+            }else{
+                document.myform.des.style.border = "3px solid crimson"
+                document.getElementById("dSmall").innerText=" not valid"
+                document.getElementById("dSmall").style.color="crimson"
+                // alert("mobile not ")
+                // temp =  false
+            }
+        
+        })
+        document.myform.uname.addEventListener("keyup",function(){
+            if(pattern.username.test(document.myform.uname.value)){
+                document.myform.uname.style.border = "2px solid green"
+                document.getElementById("nSmall").innerText="valid"
+                document.getElementById("nSmall").style.color="green"
+                // temp = true
+            }else{
+                document.myform.uname.style.border = "3px solid crimson"
+                document.getElementById("nSmall").innerText=" not valid"
+                document.getElementById("nSmall").style.color="crimson"
+                // alert("mobile not ")
+                // temp =  false
             }
         
         })
